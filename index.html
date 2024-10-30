@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Home Screen -->
+    <div class="container" id="home">
+        <header>
+            <h1>Tasks</h1>
+            <button id="addTaskButton" onclick="showAddTask()">+ Add Task</button>
+        </header>
+        <ul id="taskList">
+            <!-- Example task items -->
+            <li><input type="checkbox"> Task 1 - Due Today</li>
+            <li><input type="checkbox"> Task 2 - Due Tomorrow</li>
+        </ul>
+    </div>
+
+    <!-- Add Task Screen -->
+    <div class="container hidden" id="addTask">
+        <header>
+            <h2>Add New Task</h2>
+            <button onclick="showHome()">Back</button>
+        </header>
+        <form onsubmit="addTask(); return false;">
+            <label for="taskTitle">Title:</label>
+            <input type="text" id="taskTitle" required>
+
+            <label for="taskDescription">Description:</label>
+            <textarea id="taskDescription"></textarea>
+
+            <label for="taskDueDate">Due Date:</label>
+            <input type="date" id="taskDueDate">
+
+            <label for="taskPriority">Priority:</label>
+            <select id="taskPriority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <button type="submit">Save Task</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
